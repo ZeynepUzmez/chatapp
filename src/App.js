@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppleFilled } from '@ant-design/icons';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {ChatEngine} from 'react-chat-engine';
+
+import './App.css';
+import LoginForm from './components/LoginForm';
+import ChatFeed from './components/ChatFeed';
+
+const App= () =>{
+    //if(!localStorage.getItem('username')) return <LoginForm/>
+    return (
+       <ChatEngine
+         height="100vh"
+         projectID="a2c3a5dd-1a2c-4ad1-8d3e-70c84a6c1405"
+         userName="190290008"
+         userSecret="190290008" 
+         renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} /> }
+          />
+    );
 }
 
 export default App;
