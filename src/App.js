@@ -8,6 +8,7 @@ import ChatFeed from './components/ChatFeed';
 
 const App= () =>{
     if(!localStorage.getItem('username')) return <LoginForm/>
+    
     return (
        <ChatEngine
          height="100vh"

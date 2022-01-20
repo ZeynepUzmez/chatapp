@@ -1,11 +1,13 @@
-/* CHAT STYLES */
+
 * {
     font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
       Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
       Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     letter-spacing: 0.5px;
   }
-  
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
   .ce-chat-list {
     background-color: rgb(240, 240, 240) !important;
   }
@@ -70,7 +72,7 @@
     display: none !important;
   }
   
-  /* CUSTOM FEED */
+  /* buraya bak */
   
   .chat-feed {
     height: 100%;
@@ -89,6 +91,7 @@
     color: #9b1e48;
     font-weight: 800;
     font-size: 24px;
+    margin-left: 25px;
   }
   
   .chat-subtitle {
@@ -96,6 +99,7 @@
     font-weight: 600;
     font-size: 12px;
     padding-top: 4px;
+    margin-left: 25px;
   }
   
   .message-row {
@@ -300,3 +304,101 @@
     text-align: center;
     margin-top: 20px;
   }
+  /**
+  zeyn*/
+  .ce-chats-container .ce-chat-form-container:first-child > div > div > div{
+  
+    display: none;
+  }
+  .ce-chats-container .ce-chat-form-container{
+    padding-bottom: 14px !important;
+  }
+ .ce-chats-container .ce-chat-form-container:first-child::before {
+   content: "MESAJLAR";
+   color: black;
+   font-size: 30px;
+   font-weight: 500;
+   display: flex;
+  letter-spacing: 5px;
+   top: 15px;
+ } 
+ 
+ .anticon-left{
+   color:black;
+ }
+
+.ce-person-title-container:first-child{
+  color: white;
+ }
+
+ .ce-person-title-container{
+   position: relative;
+ }
+
+ .ce-person-title-container:first-child::after{
+  content: "Kişiler";
+  color: black;
+  font-size: 17px;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top:0;
+ }
+
+ .ce-photo-title-container:first-child{
+  color: white;
+ }
+
+ .ce-photo-title-container{
+   position: relative;
+ }
+
+ .ce-photo-title-container:first-child::after{
+  content: "Fotoğraflar";
+  color: black;
+  font-size: 17px;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top:0;
+ }
+
+ #ce-options-drop-down:first-child{
+  color: white;
+ }
+
+ #ce-options-drop-down{
+   position: relative;
+ }
+
+ #ce-options-drop-down:first-child::after{
+  content: "Ayarlar";
+  color: black;
+  font-size: 17px;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top:0;
+ }
+.ce-chats-container .ce-chat-form-container:first-child::after + #new-chat-plus-button:focus{
+   display: none;
+ }
+
+ #new-chat-plus-button{
+  display: flex;
+  position:absolute;
+  top:15px;
+  right: 20px;
+ }
+
+ .ce-chats-container{
+   border-radius: 0 !important;
+ }
+ @media only screen and (max-width:800px){
+  .ce-chats-container .ce-chat-form-container:first-child::after {
+    font-size: 24px;
+  }
+ }
