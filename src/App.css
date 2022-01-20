@@ -1,27 +1,31 @@
-/* CHAT STYLES */
+
 * {
     font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
       Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
       Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     letter-spacing: 0.5px;
   }
-  
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
   .ce-chat-list {
     background-color: rgb(240, 240, 240) !important;
   }
   
   .ce-chats-container {
-    background-color: rgb(240, 240, 240) !important;
+    background-color:rgb(127,10,59)  !important;
   }
   
   .ce-active-chat-card {
-    background-color: #cabcdc !important;
-    border: 4px solid #cabcdc !important;
+    background-color: #9B1E48!important;
+    border: 4px solid whitesmoke !important;
     border-radius: 0px !important;
   }
-  
+  .ce-chat-title-text{
+    color: whitesmoke;
+  }
   .ce-chat-subtitle-text {
-    color: #595959 !important;
+    color: whitesmoke !important;
   }
   
   .ce-chat-form-container {
@@ -68,7 +72,7 @@
     display: none !important;
   }
   
-  /* CUSTOM FEED */
+  /* buraya bak */
   
   .chat-feed {
     height: 100%;
@@ -87,13 +91,15 @@
     color: #9b1e48;
     font-weight: 800;
     font-size: 24px;
+    margin-left: 25px;
   }
   
   .chat-subtitle {
-    color: #7554a0;
+    color: rgb(127,10,59);
     font-weight: 600;
     font-size: 12px;
     padding-top: 4px;
+    margin-left: 25px;
   }
   
   .message-row {
@@ -164,7 +170,7 @@
   .message-form {
     overflow: hidden;
     border-radius: 6px;
-    border: 1px solid #3b2a50;
+    border: 1px solid rgb(110,10,59);
     background-color: white;
   }
   
@@ -216,21 +222,22 @@
   
   .wrapper {
     height: 100vh;
-      width: 100%;
-    background: rgb(117,84,160);
-    background: linear-gradient(90deg, rgba(117,84,160,1) 7%, rgba(117,84,160,1) 17%, rgba(106,95,168,1) 29%, rgba(99,103,174,1) 44%, rgba(87,116,184,1) 66%, rgba(70,135,198,1) 83%, rgba(44,163,219,1) 96%, rgba(22,188,237,1) 100%, rgba(0,212,255,1) 100%);  
+    width: 100%;
+    background-image: url('../src/image/girisArkaPlan.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .input {
-    color: #333;
+    color: whitesmoke;
     font-size: 1.2rem;
       margin: 0 auto;
     padding: 1.5rem 2rem;
     border-radius: 0.2rem;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(110,10,59);
     border: none;
     width: 90%;
     display: block;
@@ -241,12 +248,15 @@
   }
   
   .form {
+    color: whitesmoke;
     width: 400px;
+    margin-left: 50%;
+    margin-top: 10%;
   }
   
   .title {
     text-align: center;
-    color: white;
+    color: rgb(110,10,59);
     margin-bottom: 30px;
     width: 100%;
     font-size: 2.3em;;
@@ -255,8 +265,8 @@
   .button {
     border-radius: 4px;
     border: none;
-    background-color: white;
-    color: black;
+    background-color: rgb(110,10,59);
+    color: whitesmoke;
     text-align: center;
     text-transform: uppercase;
     font-size: 22px;
@@ -290,7 +300,105 @@
   }
   
   .error {
-    color: white;
+    color: rgb(127,10,59);
     text-align: center;
     margin-top: 20px;
   }
+  /**
+  zeyn*/
+  .ce-chats-container .ce-chat-form-container:first-child > div > div > div{
+  
+    display: none;
+  }
+  .ce-chats-container .ce-chat-form-container{
+    padding-bottom: 14px !important;
+  }
+ .ce-chats-container .ce-chat-form-container:first-child::before {
+   content: "MESAJLAR";
+   color: black;
+   font-size: 30px;
+   font-weight: 500;
+   display: flex;
+  letter-spacing: 5px;
+   top: 15px;
+ } 
+ 
+ .anticon-left{
+   color:black;
+ }
+
+.ce-person-title-container:first-child{
+  color: white;
+ }
+
+ .ce-person-title-container{
+   position: relative;
+ }
+
+ .ce-person-title-container:first-child::after{
+  content: "Kişiler";
+  color: black;
+  font-size: 17px;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top:0;
+ }
+
+ .ce-photo-title-container:first-child{
+  color: white;
+ }
+
+ .ce-photo-title-container{
+   position: relative;
+ }
+
+ .ce-photo-title-container:first-child::after{
+  content: "Fotoğraflar";
+  color: black;
+  font-size: 17px;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top:0;
+ }
+
+ #ce-options-drop-down:first-child{
+  color: white;
+ }
+
+ #ce-options-drop-down{
+   position: relative;
+ }
+
+ #ce-options-drop-down:first-child::after{
+  content: "Ayarlar";
+  color: black;
+  font-size: 17px;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top:0;
+ }
+.ce-chats-container .ce-chat-form-container:first-child::after + #new-chat-plus-button:focus{
+   display: none;
+ }
+
+ #new-chat-plus-button{
+  display: flex;
+  position:absolute;
+  top:15px;
+  right: 20px;
+ }
+
+ .ce-chats-container{
+   border-radius: 0 !important;
+ }
+ @media only screen and (max-width:800px){
+  .ce-chats-container .ce-chat-form-container:first-child::after {
+    font-size: 24px;
+  }
+ }

@@ -4,9 +4,11 @@ import axios from 'axios';
 const LoginForm = () =>{
     const [username , setUsername]=useState('');
     const [password , setPassword]=useState('');
+    const [error , setError]=useState('');
+
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const authObject ={ ' Project-ID':"a2c3a5dd-1a2c-4ad1-8d3e-70c84a6c1405", 'User-Name': username ,'User-Secret':password };
+        const authObject ={ 'Project-ID':"a2c3a5dd-1a2c-4ad1-8d3e-70c84a6c1405", 'User-Name': username ,'User-Secret':password };
         try{
             // username ve sifre gidecek kontrol edilecek
             await axios.get('https://api.chatengine.io/chats', { headers:authObject });
@@ -16,7 +18,7 @@ const LoginForm = () =>{
            window.location.reload();
         
         }catch(error){
-            //yanlıssa hata mesajı
+            setError('Kullanıcı adı veya şifre yanlış')
 
         }
     }
@@ -24,7 +26,7 @@ const LoginForm = () =>{
     return(
         <div className="wrapper">
             <div className="form">
-                <h1 className="title">Fırat Chat Platformu</h1>
+                <h1 className="title">Giriş Formu</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="text " value={username} onChange={(e)=> setUsername(e.target.value)} className="input" placeholder="Kullanıcı Adı" required/>
                     <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} className="input" placeholder="Sifre" required/>
@@ -32,6 +34,7 @@ const LoginForm = () =>{
                         <button type="submit" className="button">
                             <span>Giriş Yap</span>
                         </button>
+                        <h2 className='error'>{error}</h2>
 
                     </div>
 
